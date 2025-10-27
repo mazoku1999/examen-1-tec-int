@@ -16,6 +16,45 @@ body {
   min-height: 100vh;
 }
 
+/* Contenedor tipo Bootstrap (implementación propia, sin usar Bootstrap) */
+.container {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
 .encabezado-nav {
   display: flex;
   flex-direction: row;
@@ -115,21 +154,54 @@ body {
   font-weight: 300;
 }
 
+/* El contenido posterior al hero ahora estará dentro de .container, que gestiona el padding */
+.hero~* {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .seccion-crud {
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 0;
   flex-wrap: wrap;
 }
 
+/* Contenedor con fondo blanco full-width para CRUD y tabla de productos */
+.seccion-crud-tabla {
+  background-color: white;
+  padding: 2rem 0;
+}
+
+/* Header de la sección CRUD */
+.crud-header {
+  margin-bottom: 2rem;
+}
+
+.crud-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo-crud {
+  color: #666;
+  font-size: 1.1rem;
+}
+
 .tarjeta-formulario {
-  background-color: #faf8f5;
+  background-color: white;
+  border: 1px solid #e8dfd3;
   padding: 2rem;
   border-radius: 10px;
   flex: 1;
   min-width: 300px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.tarjeta-formulario:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .tarjeta-formulario h2 {
@@ -277,7 +349,7 @@ body {
 
 .tabla-categorias th {
   padding: 0.8rem;
-  text-align: left;
+  text-align: center;
   font-weight: 600;
   border-bottom: 2px solid #e8dfd3;
   font-size: 0.9rem;
@@ -285,42 +357,71 @@ body {
 
 .tabla-categorias td {
   padding: 0.8rem;
+  text-align: center;
+  border-bottom: 1px solid #e8dfd3;
+  font-size: 0.9rem;
+}
+
+/* Estilos para la tabla de productos */
+.tabla-productos {
+  margin-top: 2rem;
+  min-height: 100px;
+}
+
+.tabla-productos table {
+  width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-productos thead {
+  background-color: #faf8f5;
+}
+
+.tabla-productos th {
+  padding: 0.8rem;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 2px solid #e8dfd3;
+  font-size: 0.9rem;
+}
+
+.tabla-productos td {
+  padding: 0.8rem;
+  text-align: center;
   border-bottom: 1px solid #e8dfd3;
   font-size: 0.9rem;
 }
 
 .seccion-tabla {
   padding: 2rem;
-  background-color: #faf8f5;
-  margin: 0 2rem 2rem 2rem;
+  background-color: white;
+  border: 1px solid #e8dfd3;
+  margin: 0;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-table {
-  width: 100%;
-  background-color: white;
-  border-collapse: collapse;
-  border-radius: 8px;
-  overflow: hidden;
+/* Estilos para el header de la tabla */
+.tabla-header {
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-thead {
-  background-color: #faf8f5;
+.tabla-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
-th {
-  padding: 1rem;
-  text-align: left;
-  font-weight: 600;
-  border-bottom: 2px solid #e8dfd3;
+.subtitulo-tabla {
+  color: #666;
+  font-size: 0.95rem;
 }
 
-td {
-  padding: 1rem;
-  border-bottom: 1px solid #e8dfd3;
-}
-
+/* Estilos para botones en tablas */
 .btn-tabla {
   padding: 0.5rem 1rem;
   border: 1px solid #8b6f47;
@@ -349,7 +450,8 @@ td {
 }
 
 .seccion-horizontal {
-  padding: 3rem 2rem;
+  /* fondo blanco a pantalla completa; el padding lateral lo gestiona el .container interno */
+  padding: 3rem 0;
   background-color: white;
 }
 
@@ -431,7 +533,8 @@ td {
 }
 
 .seccion-cards {
-  padding: 3rem 2rem;
+  /* fondo blanco a pantalla completa; el padding lateral lo gestiona el .container interno */
+  padding: 3rem 0;
   background-color: white;
 }
 
