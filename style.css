@@ -16,7 +16,6 @@ body {
   min-height: 100vh;
 }
 
-/* Contenedor tipo Bootstrap (implementación propia, sin usar Bootstrap) */
 .container {
   width: 100%;
   padding-left: 2rem;
@@ -69,6 +68,14 @@ body {
 .logo {
   font-size: 2rem;
   color: #8b6f47;
+}
+
+
+.nav-derecha {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
 }
 
 .navegacion-principal ul {
@@ -154,7 +161,6 @@ body {
   font-weight: 300;
 }
 
-/* El contenido posterior al hero ahora estará dentro de .container, que gestiona el padding */
 .hero~* {
   padding-left: 0;
   padding-right: 0;
@@ -168,13 +174,13 @@ body {
   flex-wrap: wrap;
 }
 
-/* Contenedor con fondo blanco full-width para CRUD y tabla de productos */
+
 .seccion-crud-tabla {
   background-color: white;
   padding: 2rem 0;
 }
 
-/* Header de la sección CRUD */
+
 .crud-header {
   margin-bottom: 2rem;
 }
@@ -362,7 +368,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* Estilos para la tabla de productos */
+
 .tabla-productos {
   margin-top: 2rem;
   min-height: 100px;
@@ -405,7 +411,7 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* Estilos para el header de la tabla */
+
 .tabla-header {
   margin-bottom: 2rem;
   text-align: center;
@@ -421,7 +427,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* Estilos para botones en tablas */
+
 .btn-tabla {
   padding: 0.5rem 1rem;
   border: 1px solid #8b6f47;
@@ -450,7 +456,6 @@ body {
 }
 
 .seccion-horizontal {
-  /* fondo blanco a pantalla completa; el padding lateral lo gestiona el .container interno */
   padding: 3rem 0;
   background-color: white;
 }
@@ -533,7 +538,6 @@ body {
 }
 
 .seccion-cards {
-  /* fondo blanco a pantalla completa; el padding lateral lo gestiona el .container interno */
   padding: 3rem 0;
   background-color: white;
 }
